@@ -116,16 +116,24 @@ const InputField = ({ onSendMessage }) => {
   //   return;
   // }
 
-  const startGetMessage = () => {
-    // stopFlag = false
+  window.onload = function(){
     //音声認識を開始する
     recognition.start();
+    // ページ読み込み時に実行したい処理
   }
+ 
+    
+  // const startGetMessage = () => {
+  //   // stopFlag = false
+  //   //音声認識を開始する
+  //   recognition.start();
+  // }
+  // <button onClick={startGetMessage}>Start</button>
 
   return (
     <div className="input-field">
       <textarea id='recognizedText' type="text" rows='5' value={recogniziedText + inputText} />
-      <button onClick={startGetMessage}>Start</button>
+      
       <button onClick={deleteInputText}>input Clear</button>
       <button onClick={deleteLocalStorage}>All Clear</button>
     </div>
